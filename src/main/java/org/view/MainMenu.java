@@ -57,7 +57,6 @@ public class MainMenu {
                 System.exit(0);
 
             case 1:
-                //TODO - add task
                 cleanScreen();
                 CreateMenu.start();
                 break;
