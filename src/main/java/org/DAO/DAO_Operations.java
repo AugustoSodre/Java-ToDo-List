@@ -65,6 +65,7 @@ public class DAO_Operations {
             //Based on the given ResultSet, trying to convert each element to a Task
             while (rs.next()) {
                 Task task = new Task(
+                        rs.getInt("taskid"),
                         rs.getString("taskName"),
                         rs.getString("description"),
                         rs.getDate("deadline"),
@@ -85,12 +86,12 @@ public class DAO_Operations {
     }
 
     public static void updateTask(int taskID){
-
+        //TODO update task in DAO
     }
 
     public static void deleteTask(int taskID){
         //Query to be run
-        String query = "DELETE FROM task WHERE TaskID = ?";
+        String query = "DELETE FROM task WHERE taskid = ?";
 
         //Execution
         try {

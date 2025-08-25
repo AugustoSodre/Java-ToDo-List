@@ -3,7 +3,20 @@ package org.model;
 import java.util.Date;
 
 public class Task {
+    @Override
+    public String toString() {
+        return "====================\n" +
+                "ID          : " + id + "\n" +
+                "Task Name   : " + name + "\n" +
+                "Description : " + description + "\n" +
+                "Deadline    : " + new java.text.SimpleDateFormat("yyyy-MM-dd").format(deadline) + "\n" +
+                "Priority    : " + priority + "\n" +
+                "Category    : " + category + "\n" +
+                "Status      : " + status + "\n" +
+                "====================";
+    }
 
+    private int id;
     private String name;
     private String description;
     private Date deadline;
@@ -12,6 +25,16 @@ public class Task {
     private String status;
 
     public Task(String name, String description, Date deadline, int priority, String category, String status) {
+        this.name = name;
+        this.description = description;
+        this.deadline = deadline;
+        this.priority = priority;
+        this.category = category;
+        this.status = status;
+    }
+
+    public Task(int id, String name, String description, Date deadline, int priority, String category, String status) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.deadline = deadline;
@@ -69,4 +92,11 @@ public class Task {
     }
 
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

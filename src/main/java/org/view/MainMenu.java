@@ -27,8 +27,8 @@ public class MainMenu {
         System.out.println("Choose an option:");
         System.out.println("1. Add Task");
         System.out.println("2. Show Tasks");
-        System.out.println("3. Delete Task");
-        System.out.println("4. Edit Task");
+        System.out.println("3. Update Task");
+        System.out.println("4. Delete Task");
         System.out.println("0. Exit");
 
         System.out.println("-----------------------------");
@@ -45,12 +45,6 @@ public class MainMenu {
         //Controller instance
         MainMenuController controller = new MainMenuController();
 
-        //Possible menus
-        CreateMenu createMenu = new CreateMenu();
-        ReadMenu readMenu = new ReadMenu();
-        UpdateMenu updateMenu = new UpdateMenu();
-        DeleteMenu deleteMenu = new DeleteMenu();
-
         //Matching the chosen option
         switch (controller.getUserInput()) {
             case 0:
@@ -62,21 +56,19 @@ public class MainMenu {
                 break;
 
             case 2:
-                //TODO - select all
                 cleanScreen();
-                readMenu.getClass();
+                ReadMenu.start();
                 break;
 
             case 3:
                 //TODO - update menu
                 cleanScreen();
-                updateMenu.getClass();
+                //updateMenu.getClass();
                 break;
 
             case 4:
-                //TODO - delete menu
                 cleanScreen();
-                deleteMenu.getClass();
+                DeleteMenu.start();
                 break;
 
             default:
